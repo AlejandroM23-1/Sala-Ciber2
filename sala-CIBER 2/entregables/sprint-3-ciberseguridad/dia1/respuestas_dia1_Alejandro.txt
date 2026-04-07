@@ -1,0 +1,11 @@
+1. Aislamiento de Red: Control de Interfaces
+Hoy comprendimos la importancia de gestionar las interfaces de escucha. Al migrar el mapeo de puertos de 0.0.0.0
+(modo de escucha abierto) a 127.0.0.1 (interfaz de loopback), aplicamos un filtro de exposición total. Con esta configuración, 
+el contenedor de OpenClaw se vuelve invisible para cualquier nodo externo en la red local, restringiendo su acceso exclusivamente 
+al sistema host.
+
+2. Aislamiento de Archivos: El Principio de Sandboxing
+Al definir y montar el volumen específico .openclaw en Docker, implementamos el Principio de Mínimo Privilegio a nivel de
+almacenamiento. Esto garantiza que el proceso del agente de IA esté "encapsulado"; de este modo, aunque el contenedor fuera 
+comprometido, el atacante no tendría capacidad de desplazamiento lateral hacia el resto del sistema de archivos, protegiendo así
+la integridad de nuestros documentos personales y del sistema operativo.
