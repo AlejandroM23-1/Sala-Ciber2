@@ -1,0 +1,11 @@
+1. ¿Qué esperas ver en la terminal?
+Al ejecutar los comandos de diagnóstico, deberíamos ver una lista que incluya la IP local (desde dónde escucha), la dirección remota (quién se conecta) y el PID (el número de identidad del proceso en el sistema).
+
+2. ¿Qué resultado indica que todo está bien configurado?
+La clave es ver el estado "LISTENING". Esto nos confirma que OpenClaw ha reservado el puerto correctamente y se mantiene a la espera de recibir conexiones para funcionar.
+
+3. ¿Qué resultado sería una señal de peligro?
+Si al rastrear el PID descubrimos que pertenece a un programa diferente, estamos ante un conflicto de puertos. Esto significa que otra aplicación está ocupando el lugar de OpenClaw, lo que podría causar fallos o incluso ser una señal de que algo externo está interceptando el tráfico.
+
+Tras revisar los resultados, confirmamos que la dirección IP que aparece es 0.0.0.0.
+¿Qué significa esto para el equipo? Significa que el servicio está abierto a toda la red local. En nuestro contexto actual (red de casa), esto implica que cualquier dispositivo conectado al mismo WiFi podría intentar interactuar con nuestro agente de IA. Es un punto que debemos cerrar en la fase de Hardening para que solo responda a nuestra propia máquina (127.0.0.1).
