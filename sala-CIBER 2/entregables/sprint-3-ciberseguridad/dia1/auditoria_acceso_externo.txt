@@ -1,0 +1,11 @@
+1. ¿Qué se espera visualizar en el test de intrusión inicial?
+Al intentar la conexión desde un dispositivo externo en el mismo segmento de red, el servicio debería presentar el panel de autenticación, solicitando obligatoriamente el token de acceso o mostrando el mensaje de "pairing required" para autorizar la nueva IP.
+
+2. ¿Qué resultado valida una configuración de red e identidad correcta?
+Si el navegador carga el prompt de inicio de sesión y restringe cualquier interacción hasta que se valida el handshake de emparejamiento o el token, confirmamos que existe una capa de control de acceso activa y operativa frente a peticiones externas.
+
+3. ¿Qué escenarios representan una vulnerabilidad o señal de alerta?
+
+Acceso No Autorizado: Si el sistema permite visualizar el historial de chats o los archivos del contenedor sin previa autenticación, la seguridad es nula y los activos están totalmente expuestos a la red local.
+
+Rechazo de Conexión (Connection Refused): Si la conexión es rechazada de inmediato, indica que el puerto no está escuchando en la interfaz pública (0.0.0.0) o que el firewall está filtrando los paquetes; en este contexto de hardening, esto se considera una configuración segura, no un error.
