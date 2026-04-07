@@ -1,0 +1,6 @@
+Evaluador:	Manuel Rivera
+Evaluado:	Alejandro Mamani
+Escenario Elegido:	Diferencia entre autenticación real y cosmética (Sección C).
+Resumen de la Respuesta:	Alejandro explicó que la autenticación real obliga al sistema a validar el token de seguridad en cada petición antes de mostrar cualquier dato. En cambio, una autenticación cosmética es solo una "fachada" en la interfaz que se puede saltar fácilmente. Lo confirmamos intentando entrar directamente a una ruta de la API; como el sistema nos rebotó, probamos que la llave es obligatoria.
+Qué entendió bien:	El proceso de comprobación técnica y el uso de herramientas para testear rutas específicas de la API.
+Qué necesita repasar:	Profundizar en otras diferencias, como la persistencia de sesiones o el riesgo de dejar rutas de administración expuestas aunque el chat esté bloqueado.
