@@ -1,0 +1,25 @@
+¿Qué esperas ver?
+Al ejecutar git status, lo ideal es visualizar únicamente los archivos de configuración modificados, asegurando que el archivo .env permanezca completamente
+invisible para el sistema de control de versiones.
+
+¿Qué resultado indica que está bien configurado? Si el .env no figura en el reporte de git status y se confirma su presencia dentro de las reglas del .gitignore, 
+tenemos la certeza de que los secretos (API keys) están aislados. Esto garantiza que, ante un eventual push a GitHub, la información sensible no se filtrará al
+repositorio público.
+
+¿Qué resultado sería una señal de peligro? 
+Si el .env aparece como "Untracked file": Indica que Git lo está detectando y corremos el riesgo de añadirlo por error.
+Si aparece bajo "Changes to be committed": Es una alerta crítica, pues significa que el archivo ya está en el área de preparación (staging) listo para subirse.
+Si aparece como "modified": Es la señal más grave, ya que confirma que el archivo ya forma parte del historial de Git y su rastro permanecerá en los commits anteriores.
+
+Para optimizar la seguridad en este entorno, el archivo .env se ubicó fuera del directorio .openclaw. Esto permite que Docker gestione la inyección de la API key de 
+forma externa, siguiendo estos pasos:
+
+Generación del secreto: Se creó el archivo .env en la raíz (junto al docker-compose.yml) para almacenar la clave de OpenRouter.
+
+Vinculación en el despliegue: Se configuró la ruta del .env dentro del archivo YAML para que el servicio la reconozca.
+
+Saneamiento de configuración: Se procedió a eliminar la API key que estaba grabada en texto plano dentro del archivo .json.
+
+Re-despliegue: Se eliminó el contenedor existente y se levantó una nueva instancia para aplicar los cambios.
+
+Mediante este procedimiento, hemos desacoplado la identidad del servicio de su código fuente, estableciendo un almacenamiento seguro y privado.
