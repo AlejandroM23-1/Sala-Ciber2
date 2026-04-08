@@ -1,3 +1,11 @@
-• ¿Cuál es la diferencia entre un puerto abierto y un puerto expuesto? ¿Pueden tener un puerto abierto pero no expuesto?
-• ¿Por qué importa saber qué otros servicios están corriendo en la misma máquina que OpenClaw?
+¿Qué esperas ver? Una lista de servicios del sistema (RPC, SMB en puertos 135, 445) y el de OpenClaw.
 
+Señal de éxito: Que los servicios críticos del sistema estén en LISTENING pero protegidos por las reglas del firewall.
+
+Señal de peligro: Encontrar puertos desconocidos escuchando en 0.0.0.0 (IP pública), especialmente si no se sabe qué programa los abrió.
+
+Puerto Auditado: 18789
+Estado: LISTENING y ESTABLISHED.
+PID Principal: 22092 (Confirmado como proceso de OpenClaw).
+PID Secundario: 3984 (Navegador local interactuando con la herramienta).
+Observación: El tráfico es puramente interno (127.0.0.1 <-> 127.0.0.1), lo cual valida el aislamiento de red.
