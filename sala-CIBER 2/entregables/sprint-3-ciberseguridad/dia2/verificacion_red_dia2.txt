@@ -1,0 +1,3 @@
+• ¿Cuál es la diferencia entre un puerto abierto y un puerto expuesto? ¿Pueden tener un puerto abierto pero no expuesto?
+• ¿Por qué importa saber qué otros servicios están corriendo en la misma máquina que OpenClaw?
+
