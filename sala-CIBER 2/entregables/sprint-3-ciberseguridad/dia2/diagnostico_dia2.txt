@@ -1,3 +1,9 @@
 • ¿Qué esperas ver en la terminal?
+Espero ver que solo nos muestra una línea donde se muestre "127.0.0.1" junto al puerto designado para mi openclaw(18789). Esto significaría que la configuración
+de seguridad y mantener cerrado mi openclaw se ha guardado.
 • ¿Qué resultado indica que está bien configurado?
+El resultado que indica que está bien configurado es:
+TCP 127.0.0.1:PUERTO ... LISTENING.
 • ¿Qué resultado sería una señal de peligro?
+El resultado que sería una señal de peligro sería:
+TCP 0.0.0.0:PUERTO ... LISTENING.
