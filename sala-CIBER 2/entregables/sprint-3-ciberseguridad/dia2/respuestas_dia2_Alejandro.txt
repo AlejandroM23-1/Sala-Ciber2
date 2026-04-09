@@ -1,43 +1,16 @@
-¿El hardening del Día 1 modifica un archivo permanente?
-Sí, porque al editar el docker-compose.yml estamos haciendo un cambio en un archivo de configuración que reside en el disco. No es algo volátil; Docker lee ese
-archivo cada vez que levanta el contenedor.
+¿Qué sucede si un tercero obtiene mi API Key de OpenRouter?
+Las repercusiones son inmediatas y afectan tres pilares fundamentales:
 
-¿El cambio de 127.0.0.1 debería persistir?
-Debería persistir siempre. Como el archivo está guardado con esa IP local, el servicio siempre se levantará en modo privado a menos que alguien vuelva a editar 
-el archivo manualmente.
+Agotamiento de Activos Financieros: Los atacantes suelen redirigir el tráfico hacia modelos de lenguaje de alto coste (como Claude 3.5 o GPT-4), drenando el saldo disponible en cuestión de minutos.
 
-¿Cuál es la diferencia entre un puerto abierto y un puerto expuesto?
-Un puerto abierto es el que tiene una aplicación escuchando, pero un puerto expuesto es el que el firewall permite ver desde fuera. Puedo tener el puerto de
-OpenClaw abierto solo para mí en 127.0.0.1 y así no estará expuesto a nadie más en la red.
+Saturación por Denegación de Servicio (DoS): Al exceder los límites de peticiones (rate limits) de la cuenta, el acceso legítimo queda bloqueado, impidiendo que el desarrollador pueda utilizar la herramienta.
 
-¿Por qué importa saber qué otros servicios están corriendo?
-Porque cada servicio abierto es una entrada potencial. Si otro programa del sistema es vulnerable, un atacante podría entrar por ahí y luego intentar 
-saltar hacia mis datos de OpenClaw o mis tokens de API.
+Responsabilidad Ética y Legal: El uso de la identidad del usuario para generar contenido malicioso, phishing o actividades prohibidas puede resultar en la suspensión definitiva del perfil y posibles auditorías de seguridad.
 
+Mecanismos de Detección:
 
-Diferencia de riesgo:
-Al no usar VM y correrlo directamente en mi Windows, el riesgo es que el agente tiene acceso más directo a mi hardware y archivos personales. Si el servicio es 
-hackeado, el atacante ya está dentro de mi host principal.
+Monitorización de Tráfico: Revisar el panel de control para identificar telemetría inusual, como peticiones en horarios no operativos o llamadas a modelos que no forman parte del proyecto.
 
-Red Pública vs Privada:
-En modo Privado, Windows intenta ser "amigable" y se deja ver por otros dispositivos del WiFi. En modo Público, Windows se vuelve invisible y bloquea las conexiones 
-entrantes, lo cual es obligatorio aquí en el campus para que nadie detecte mi puerto de OpenClaw.
+Análisis de Consumo: Anomalías en el saldo o descensos abruptos de crédito sin una justificación de desarrollo.
 
-¿En qué archivos podrían haber escrito su API key?
-Principalmente en el docker-compose.yml, en algún config.json o incluso en archivos de texto de notas si los guardé en la misma carpeta.
-
-¿Han hecho algún commit que pueda contener la API key? ¿Cómo lo verificarían?
-Espero que no, pero para estar seguro uso git log -p. Este comando me deja ver el contenido histórico de cada cambio. Si la clave se filtró a GitHub, cualquier bot 
-la robaría en segundos y gastaría mi crédito de OpenRouter, por eso es un riesgo financiero crítico.
-
-¿Qué es un .env?
-Es un archivo local que guarda mis claves secretas para que la aplicación las use sin que el código fuente las tenga escritas. Es una forma de separar la
-configuración de la programación.
-
-¿Qué pasa si agregas .env al .gitignore después de commitearlo?
-El archivo se queda en GitHub. El .gitignore solo funciona para archivos que Git nunca ha visto. Si ya se subió una vez, Git lo seguirá rastreando hasta que 
-limpie el caché de la base de datos de Git manualmente.
-
-¿Por qué el firewall y el binding son capas distintas?
-El binding es una decisión de la aplicación (OpenClaw) para decidir a quién escucha (solo a mí en 127.0.0.1). El firewall es una decisión del sistema operativo 
-(Windows) para decidir si deja que alguien de la red siquiera toque mis puertos. Son dos capas de defensa: si una falla, la otra todavía me protege.
+Alertas de Servicio: Errores de "cuota excedida" o respuestas fallidas del servidor por falta de fondos.
