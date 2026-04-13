@@ -8,10 +8,10 @@ loom: falta_terminar
 ---
 
 ## Secciones
-- [ ] A — Verificación de estado + setup de Wireshark
-- [ ] B — Captura de tráfico en reposo — OpenClaw sin hacer nada
-- [ ] C — Captura de tráfico activo — peticiones reales
-- [ ] D — Análisis de permisos del sistema operativo
-- [ ] E — Documentación de riesgos para los 34 estudiantes
-- [ ] F — Exploración con IA
-- [ ] G — Evaluación entre pares + Cierre
+- [x] A — Verificación de estado + setup de Wireshark
+- [x] B — Captura de tráfico en reposo — OpenClaw sin hacer nada
+- [x] C — Captura de tráfico activo — peticiones reales
+- [x] D — Análisis de permisos del sistema operativo
+- [x] E — Documentación de riesgos para los 34 estudiantes
+- [x] F — Exploración con IA
+- [x] G — Evaluación entre pares + Cierre
