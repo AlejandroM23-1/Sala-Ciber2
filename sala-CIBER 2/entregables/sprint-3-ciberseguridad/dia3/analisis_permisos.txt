@@ -2,7 +2,8 @@
 
 Usuario identificado: BOSHI\boshi (identificado por la ruta de perfil observada en la terminal).
 
-Nivel de privilegios: Usuario Estándar. El proceso no cuenta con privilegios de administrador, ya que no se observó el token de elevación en la ejecución y Windows restringe por defecto los procesos de usuario a menos que se fuerce el "Ejecutar como administrador".
+Nivel de privilegios: Usuario Estándar. El proceso no cuenta con privilegios de administrador, ya que no se observó el
+token de elevación en la ejecución y Windows restringe por defecto los procesos de usuario a menos que se fuerce el "Ejecutar como administrador".
 
 2. ¿A qué carpetas fuera de su directorio de instalación accedió OpenClaw?
 
